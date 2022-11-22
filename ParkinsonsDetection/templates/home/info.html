@@ -1,0 +1,20 @@
+{% extends base_template %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container d-flex h-100 align-items-center justify-content-center">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <h1 class="display-1" style="font-family: 'Raleway', sans-serif;"><a href="{% url 'home:home' %}" style="text-decoration: none; color: inherit;">PARKINSONS DETECTION</a></h1>
+    <h4 class="p-2" style="font-family: 'Rubik', sans-serif; width: 60%; text-align: justify; text-justify: inter-word;">
+      Parkinson's disease is a terminal neurodegenerative disorder that affects the dopamine producing neurons in a specific area of the brain called substantia nigra. Symptoms of Pakinson's include tremors, difficulty moving, rigidity, postural instability, sleep disorders, loss of sense of smell, and a variety of cognitive impairments. The cause of this diseas is largely unknown. However, effective treatments do exist and can substantially aleviate many of the common symptoms. Early diagnostics can be key in slowing down the progress of the disease and providing a better quality of life for those affected.
+      <br/>
+      <br/>
+      The aim of this project is to provide an early and quick Parkinson's detection tool for people unable to access a medical professional in a timely manner. Ultimately, this project is intended to guide people at risk towards seeking professional medical asistance sooner rather than later.
+    </h4>
+  </div>
+</div>
+
+{% endblock content %}
+

@@ -1,0 +1,6 @@
+*__pycache__*
+migrations*
+pyrightconfig.json
+db.sqlite3
+dataset/*
+model/*

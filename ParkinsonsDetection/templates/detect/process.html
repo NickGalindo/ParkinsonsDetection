@@ -1,0 +1,25 @@
+
+{% extends base_template %}
+
+{% load static %}
+
+{% block script %}
+<script type="text/javascript">
+  setTimeout(function() {
+    window.location.href="{% url 'detect:results' %}";
+  }, 1000);
+</script>
+{% endblock script %}
+
+{% block content %}
+
+<div class="container d-flex flex-column h-100 justify-content-center align-items-center">
+  <h1 class="text-muted" style="font-family: 'Raleway', sans-serif; margin-left: 50px; margin-top: 400px;">PROCESSING</h1>
+</div>
+
+<div id="preloader">
+  <div id="loader"></div>
+</div>
+
+{% endblock content %}
+

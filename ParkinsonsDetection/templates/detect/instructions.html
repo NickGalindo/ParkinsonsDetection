@@ -1,0 +1,38 @@
+{% extends base_template %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container d-flex flex-column h-100 align-items-center">
+  <h1 class="display-1" style="font-family: 'Raleway', sans-serif; margin-top: 30px;"><a href="{% url 'home:home' %}" style="text-decoration: none; color: inherit;">PARKINSONS DETECTION</a></h1>
+  <div class="d-flex flex-column h-100 justify-content-center align-items-center">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+
+      <div class="card text-white border-primary">
+        <img src="{% static 'imgs/Spiral.png' %}" alt="Spiral"/>
+        <div class="card-footer text-muted text-center" style="font-family: 'Rubik', sans-serif;">Example of spiral drawing</div>
+      </div>
+
+      <div class="p-5"></div>
+
+      <div class="card border-primary">
+        <img src="{% static 'imgs/Wave.png' %}" alt="Wave"/>
+        <div class="card-footer text-muted text-center" style="font-family: 'Rubik', sans-serif;">Example of wave drawing</div>
+      </div>
+
+    </div>
+    <div class="p-5"></div>
+    <h4 class="p-2" style="font-family: 'Rubik', sans-serif; width: 80%; text-align: justify; text-justify: inter-word;">
+      This tool uses a machine learning algorithm to determine how likely you are to have Parkinson's disease based solely off of two unique drawings, a spiral and a wave. Examples of these drawings are shown above.
+      <br/>
+      <br/>
+      You will be asked to draw both of these on blank sheets of paper and upload them onto the webpage for analisis. Make sure to crop the image so as to only leave the drawing for more accurate results.
+    </h4>
+    <div class="p-4"></div>
+    <a href="{% url 'detect:detection' %}"><button type="button" class="btn btn-primary btn-lg" style="background-color: #2A8DF4;">Next</button></a>
+  </div>
+</div>
+
+{% endblock content %}
+

@@ -1,0 +1,56 @@
+{% extends base_template %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container d-flex flex-column h-100 align-items-center">
+  <h1 class="display-1" style="font-family: 'Raleway', sans-serif; margin-top: 30px;"><a href="{% url 'home:home' %}" style="text-decoration: none; color: inherit;">PARKINSONS DETECTION</a></h1>
+
+  {% if precaution %}
+    <div class="alert alert-dismissible alert-danger" style="font-family: 'Rubik', sans-serif; font-weight: bold; font-size: 20px;">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      Your results show correlation with Parkinson's disease. Please consider consulting a medical profesional.
+    </div>
+  {% else %}
+    <div class="alert alert-dismissible alert-success" style="font-family: 'Rubik', sans-serif; font-weight: bold; font-size: 20px;">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      Healthy! Your results show no correlation with Parkinson's disease
+    </div>
+  {% endif %}
+
+  <div class="d-flex flex-column h-100 justify-content-center align-items-center">
+    <div class="d-flex flex-row justify-content-center align-items-center" style="margin-top: -124px;">
+      <div class="card border-info" style="max-width: 40rem;">
+        <div class="card-body">
+          <h4 class="p-2 card-title text-center" style="font-family: 'Raleway', sans-serif; margin-top: 20px; margin-bottom: 20px;">Spiral Image</h4>
+          <img src="{% static 'imgs/f.png' %}" style="max-width: 100%; height: auto;"></img>
+          <p class="text-center card-text text-muted h5" style="font-family: 'Rubik', sans-serif; margin-top: 15px;">Diagnostic: <strong class="{% if spiral_result == 'parkinson' %}text-danger{% else %}text-success{% endif %}" style="font-weight: bold;">{{ spiral_result }}</strong></p>
+          <p class="text-center card-text text-muted h5" style="font-family: 'Rubik', sans-serif; margin-top: 15px;">Confidence: <strong class="{% if spiral_result == 'parkinson' %}text-danger{% else %}text-success{% endif %}" style="font-weight: bold;">{{ spiral_confidence }}%</strong></p>
+          <p class="text-center card-text text-muted h5" style="font-family: 'Rubik', sans-serif; margin-top: 15px;">Accuracy: <strong class="text-info" style="font-weight: bold;">{{ spiral_accuracy }}%</strong></p>
+          <p class="text-center card-text text-muted h5" style="font-family: 'Rubik', sans-serif; margin-top: 15px;">P(A|B): <strong class="text-warining" style="font-weight: bold;">{{ spiral_bayes }}%</strong></p>
+        </div>
+      </div>
+      <div class="p-4"></div>
+      <div class="card border-info" style="max-width: 40rem;">
+        <div class="card-body">
+          <h4 class="p-2 card-title text-center" style="font-family: 'Raleway', sans-serif; margin-top: 20px; margin-bottom: 20px;">Wave Image</h4>
+          <img src="{% static 'imgs/g.png' %}" style="max-width: 100%; height: auto;"></img>
+          <p class="text-center card-text text-muted h5" style="font-family: 'Rubik', sans-serif; margin-top: 15px;">Diagnostic: <strong class="{% if wave_result == 'parkinson' %}text-danger{% else %}text-success{% endif %}" style="font-weight: bold;">{{ wave_result }}</strong></p>
+          <p class="text-center card-text text-muted h5" style="font-family: 'Rubik', sans-serif; margin-top: 15px;">Confidence: <strong class="{% if wave_result == 'parkinson' %}text-danger{% else %}text-success{% endif %}" style="font-weight: bold;">{{ wave_confidence }}%</strong></p>
+          <p class="text-center card-text text-muted h5" style="font-family: 'Rubik', sans-serif; margin-top: 15px;">Accuracy: <strong class="text-info" style="font-weight: bold;">{{ wave_accuracy }}%</strong></p>
+          <p class="text-center card-text text-muted h5" style="font-family: 'Rubik', sans-serif; margin-top: 15px;">P(A|B): <strong class="text-warining" style="font-weight: bold;">{{ wave_bayes }}%</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="p-4"></div>
+    <div class="d-flex flex-row justify-content-center align-items-center">
+      <a href="{% url 'home:info' %}"><button type="button" class="btn btn-secondary btn-lg">Info</button></a>
+      <div class="p-4"></div>
+      <a href="{% url 'detect:detection' %}"><button type="button" class="btn btn-info btn-lg">Repetir</button></a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+

@@ -1,0 +1,32 @@
+{% extends base_template %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container d-flex flex-column h-100 align-items-center">
+  <h1 class="display-1" style="font-family: 'Raleway', sans-serif; margin-top: 30px;"><a href="{% url 'home:home' %}" style="text-decoration: none; color: inherit;">PARKINSONS DETECTION</a></h1>
+    <form method="post" enctype="multipart/form-data" class="d-flex flex-column h-100 justify-content-center align-items-center">
+      <div class="d-flex flex-row justify-content-center align-items-center" style="margin-top: -124px;">
+        {% csrf_token %}
+        <div class="card border-info" style="max-width: 20rem;">
+          <div class="card-body">
+            <h4 class="p-2 card-title text-center" style="font-family: 'Raleway', sans-serif; margin-top: 20px; margin-bottom: 20px;">Spiral Image</h4>
+            {{ form.spiral_img }}
+          </div>
+        </div>
+        <div class="p-4"></div>
+        <div class="card border-info" style="max-width: 20rem;">
+          <div class="card-body">
+            <h4 class="p-2 card-title text-center" style="font-family: 'Raleway', sans-serif; margin-top: 20px; margin-bottom: 20px;">Wave Image</h4>
+            {{ form.wave_img }}
+          </div>
+        </div>
+      </div>
+      <div class="p-5"></div>
+      <button type="submit" class="btn btn-primary btn-lg font-weight-bold" style="background-color: #2A8DF4; font-family: 'Rubik', sans-serif;">SUBMIT</button>
+    </form>
+</div>
+
+{% endblock content %}
+

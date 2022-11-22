@@ -1,0 +1,4 @@
+DEFAULT_DATASET_PATH: "data/dataset"
+SPIRAL_MODEL_LOCATION: "data/model/spiralModel"
+WAVE_MODEL_LOCATION: "data/model/waveModel"
+

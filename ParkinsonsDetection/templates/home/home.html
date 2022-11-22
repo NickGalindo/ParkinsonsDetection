@@ -1,0 +1,20 @@
+{% extends base_template %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container d-flex h-100 align-items-center justify-content-center">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <h1 class="display-1" style="font-family: 'Raleway', sans-serif;">PARKINSONS DETECTION</h1>
+    <div class="p-4"></div>
+    <div class="d-flex flex-row justify-content-center align-items-center">
+      <a href="{% url 'home:info' %}"><button type="button" class="btn btn-secondary btn-lg">Info</button></a>
+      <div class="p-4"></div>
+      <a href="{% url 'detect:instructions' %}"><button type="button" class="btn btn-info btn-lg">Try Me!</button></a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
