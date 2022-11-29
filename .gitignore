@@ -3,5 +3,3 @@ migrations*
 pyrightconfig.json
 db.sqlite3
 dataset*
-waveModel*
-spiralModel*
