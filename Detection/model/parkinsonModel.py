@@ -123,7 +123,7 @@ def _optimizeClassifier(trainX: np.ndarray, trainY: np.ndarray, testX: np.ndarra
     print(f"\t[DATA] Sensitivity\n\t\tmean: {np.mean(trials_metrics['sensitivity'])} std: {np.std(trials_metrics['sensitivity'])}")
     print(f"\t[DATA] Specificity\n\t\tmean: {np.mean(trials_metrics['specificity'])} std: {np.std(trials_metrics['specificity'])}")
 
-    return max_model, np.mean(trials_metrics['acc'])
+    return max_model, max_model_metrics['acc']
 
 class ParkinsonModel:
     def __init__(self):
